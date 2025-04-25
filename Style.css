@@ -1,0 +1,252 @@
+/* Custom Animations */
+@keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+  
+    50% {
+      transform: translateY(-10px);
+    }
+  
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes typing {
+    0% {
+      opacity: 0.3;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0.3;
+    }
+  }
+  
+  /* Custom Styles */
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 8px 12px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    width: fit-content;
+  }
+  
+  .typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #64748b;
+    border-radius: 50%;
+    animation: typing 1s infinite;
+  }
+  
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  .message-bubble {
+    max-width: 80%;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .user-message {
+    background: #3b82f6;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+    padding: 1rem;
+  }
+  
+  .bot-message {
+    background: #f1f5f9;
+    color: #1e293b;
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+    padding: 0;
+  }
+  
+  .dark .bot-message {
+    background: #1e293b;
+    color: #f1f5f9;
+  }
+  
+  /* News Card Animation */
+  .news-card {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .news-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Floating Animation for Icons */
+  .floating-icon {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Smooth Transitions */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+  }
+  
+  /* Focus Styles */
+  input:focus,
+  button:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3b82f6;
+  }
+  
+  /* Formatted Response Styling */
+  .prose {
+    color: #1e293b;
+  }
+  
+  .dark .prose {
+    color: #f1f5f9;
+  }
+  
+  .prose h3 {
+    color: #3b82f6;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .dark .prose h3 {
+    color: #60a5fa;
+  }
+  
+  .prose h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #3b82f6;
+    border-radius: 50%;
+  }
+  
+  .dark .prose h3::before {
+    background-color: #60a5fa;
+  }
+  
+  .prose p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: #4b5563;
+  }
+  
+  .dark .prose p {
+    color: #d1d5db;
+  }
+  
+  .prose ul {
+    list-style-type: none;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .prose li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-weight: bold;
+  }
+  
+  .dark .prose li::before {
+    color: #60a5fa;
+  }
+  
+  /* Highlight important text */
+  .prose strong {
+    color: #3b82f6;
+    font-weight: 600;
+  }
+  
+  .dark .prose strong {
+    color: #60a5fa;
+  }
+  
+  /* Section borders */
+  .prose>div {
+    border-left: 2px solid #e2e8f0;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .dark .prose>div {
+    border-left-color: #374151;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 640px) {
+    .message-bubble {
+      max-width: 90%;
+    }
+  
+    .prose h3 {
+      font-size: 1.125rem;
+    }
+  
+    .prose p {
+      font-size: 0.875rem;
+    }
+  }
